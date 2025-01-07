@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  background: url(photos/red2.png) center;
+  background-size: cover;  /* Ensure the image covers the full viewport */
+  background-repeat: no-repeat;  /* Prevent the image from repeating */
+  background-attachment: fixed;
+  
+}
+
+.container {
+  width: 1000px;
+  height: 1000px;
+  border-radius: 1em;
+  padding: 2em;
+  display: flex; 
+  gap: 1em;
+}
+
+.row {
+  border-radius: 1em;
+}
+
+.image {
+  max-height: 350px; /* Use a percentage to maintain responsiveness */
+  object-fit: contain; /* Scale the image while maintaining its aspect ratio */
+  margin: 0 auto; /* Center image horizontally */
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+  width: 100%; /* or specify a fixed width/height */
+  height: auto;
+  
+}
+
+.image:hover{
+
+  transform: scale(1.2);
+  
+}
+
+
+.image {
+  max-height: 350px; /* Limit height for responsiveness */
+  object-fit: contain; /* Maintain aspect ratio */
+  margin: 0 auto; /* Center image horizontally */
+  border-radius: 6px; /* Rounded corners */
+  width: 100%; /* Full width, adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 1s ease; /* Smooth transition for hover zoom and rotate */
+}
+
+/* Hover effect - rotate and zoom */
+.image:hover {
+  transform: scale(1.2) rotate(360deg); /* Zoom in and rotate when hovered */
+}
+
+
+.title {
+  
+  color: rgb(197, 207, 8);
+  font-size: 24px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.dish-title{
+  margin-top: 15px;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center ;
+
+}
+.price{
+  text-align: center;
+}
+
+.serving{
+  text-align: center;
+}
+
+.a{
+
+text-align: left;
+margin-left: 110px;
+
+}
+
+
+
+
+
+
+
+.row1 {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.finish{
+  margin-top: 10px; ;
+}
+
+.row2, .row3 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.col {
+  flex: 1;
+  border-radius: 1em;
+  display: flex;
+  gap: 1em;
+}
+
+.col.col-2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.col-box {
+  flex: 1;
+  border-radius: 1em;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid #ffffff10;
+  backdrop-filter: blur(50px);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  padding: 1em; /* Added padding for better spacing */
+  display: flex; /* Enable flexbox */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  text-align: left; /* Center text */
+  color: white;
+  line-height: 30px;
+}
+.col-box-1{
+  flex: 1;
+  border-radius: 1em;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid #ffffff10;
+  backdrop-filter: blur(50px);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  padding: 1em; /* Added padding for better spacing */
+  display: flex; /* Enable flexbox */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  text-align: left; /* Center text */
+  color: white;
+  line-height: 30px;
+}
+
+
+
+
+
+.col-box:hover {
+  transform: scale(1.02);
+}
+
+.container:hover .col-box:not(:hover) {
+  filter: grayscale(1) blur(5px);
+}
+
+.col-box-1:hover {
+  transform: scale(1.02);
+}
+.container:hover .col-box-1:not(:hover) {
+  filter: grayscale(1) blur(5px);
+}
+
+
+
+.box-link {
+  display: block; 
+  height: 100%; 
+  width: 100%; 
+  text-decoration: none; 
+  color: inherit; 
+  cursor: pointer; 
+}
+
+@media(max-width:1024px) {
+  .container {
+      flex-direction: column;
+  }
+  .row1, .row2, .row3 {
+      flex-direction: row;
+  }
+  .col {
+      flex: 2;
+      flex-direction: column;
+  }
+}
+
+@media(max-width:650px) {
+  .container {
+      max-width: 900px;
+      max-height: 500px;
+      gap: 0.5em;
+  }
+  .row, .col {
+      gap: 0.5em;
+  }
+}
